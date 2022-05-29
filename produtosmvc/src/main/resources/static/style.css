@@ -1,0 +1,28 @@
+body{
+    background-color: rgba(0, 86, 136, 0.486);
+}
+ 
+.icon:hover{
+    transition: 1s;
+ 
+}
+.container{
+    position: relative;  
+    color: aliceblue;
+    border-color: aliceblue;
+    border-width: 0.2cm;
+    border-style: double; 
+    padding: 1%;
+    width: fit-content;
+    font-size: 140%;
+    
+}
+
+.center{
+    text-align: center;
+}
+.center2{
+    
+    margin-left: 25%;
+    text-align: center;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class = "center">
+        <h1 style="color:white; border-style: solid; width:50%" class="center2">Tabela de items</h1>
+        <table style="border: white; border-style: solid; width: 50%; color: white;" class="center2">
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Editar</th>
+                <th>Deletar</th>
+            </tr>
+            <tr th:each="p : ${produtosList}" th:object="${p}">
+                <td th:text="*{nome}"></td>
+                <td th:text="*{descricao}"> </td>
+                <td th:text="*{preco}"></td>
+                <td> <a th:href="@{'/editar/'+ *{id}}">Editar</a> </td>
+                <td> <a th:href="@{'/deletar/'+ *{id}}">Deletar</a></td>
+            </tr>
+        </table>
+
+        <p class="center">
+            <a href="/cadastrar" class="btn btn-outline-light icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentcolor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                  </svg> 
+                <br/>
+                ADD
+            </a>
+        </p>
+    </div>
+</body>
+</html>
